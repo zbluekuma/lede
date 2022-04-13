@@ -3,16 +3,15 @@
 
 [English](./README_EN.md)
 
-------
 ## 如何编译自己需要的 OpenWrt 固件
+
 注意：
 -
 1. **不**要用 **root** 用户进行编译！！！
 2. 国内用户编译前最好准备好梯子
 3. 默认登陆IP 192.168.50.1 密码 password
 
-
-## 编译命令如下:
+编译命令:
 -
 1. 首先装好 Ubuntu 64bit，推荐 Ubuntu 20.04 LTS x64
 
@@ -35,9 +34,8 @@
 
 本套代码保证肯定可以编译成功。里面包括了 R21 所有源代码，包括 IPK 的。
 
-## 你可以自由使用，但源码编译二次发布请注明我的 GitHub 仓库链接。谢谢合作！
--
 二次编译：
+-
 ```bash
 cd lede
 git pull
@@ -47,7 +45,7 @@ make -j8 download
 make -j$(($(nproc) + 1)) V=s
 ```
 
-如果需要重新配置：
+重新配置：
 ```bash
 rm -rf ./tmp && rm -rf .config
 make menuconfig
@@ -56,8 +54,8 @@ make -j$(($(nproc) + 1)) V=s
 
 编译完成后输出路径：bin/targets
 
-------
-## 如果你使用WSL或WSL2进行编译：
+
+使用WSL或WSL2编译：
 -
 由于wsl的PATH路径中包含带有空格的Windows路径，有可能会导致编译失败，请在将make -j1 V=s或make -j$(($(nproc) + 1)) V=s改为
 
@@ -70,8 +68,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j1 V=s
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j$(($(nproc) + 1)) V=s
 ```
 
-------
-## macOS 原生系统进行编译：
+
+macOS 原生系统进行编译：
 -
 1.在 AppStore 中安装 Xcode
 
@@ -105,7 +103,7 @@ source ~/.bashrc
 
 然后输入 bash 命令，进入bash shell，就可以和 Linux 一样正常编译了
 
-------
+
 ## 捐贈
 
 如果你觉得此项目对你有帮助，可以[捐助Lean](https://github.com/coolsnowwolf/lede)，以鼓励项目能持续发展，更加完善
